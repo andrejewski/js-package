@@ -1,7 +1,7 @@
 {
   "name": "js-package",
   "description": "cocaine, but for JavaScript open-source packages",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Chris Andrejewski <christopher.andrejewski@gmail.com>",
   "bin": {
     "js-package": "bin/js-package.js"

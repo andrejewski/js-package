@@ -6,7 +6,7 @@ var args = process.argv.slice(2);
 var command = args[0];
 
 function log(message) {
-  process.stdout.write(message);
+  process.stdout.write(message + '\n');
 }
 
 switch (command) {
@@ -16,7 +16,9 @@ switch (command) {
     var gitUrl = 'git://' + url;
     execSync('git clone --depth=1 --branch=master ' + gitUrl + ' ' +dir);
     execSync('rm -rf ./.git && git init');
-    log('run `npm init` and `npm install` to finish setting up\n');
+
+    log('run `git remote add origin git:{repo_url}.git && git pull` to setup git');
+    log('run `npm init` and `npm install` to finish setting up the package');
     return;
   default:
     log([
@@ -24,6 +26,5 @@ switch (command) {
       '',
       'Commands:',
       '  init [dir]     clone js-package into [dir], defaults to current directory',
-      ''
     ].join('\n'));
 }
