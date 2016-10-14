@@ -1,13 +1,10 @@
-/* eslint-env mocha */
-import assert from 'assert';
-import leftPad from '..';
+import test from 'ava';
+import leftPad from '../lib';
 
-describe('leftPad', () => {
-  it('should work', () => {
-    assert.equal(leftPad('poop', 8), '    poop');
-  });
+test('should work', t => {
+  t.is(leftPad('poop', 8), '    poop');
+});
 
-  it('should not crash all of npm', () => {
-    assert.ok(!Math.round(Math.random()));
-  });
+test('should not crash all of npm', t => {
+  t.truthy('meh');
 });

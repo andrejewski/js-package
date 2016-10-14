@@ -10,6 +10,7 @@
     "url": "https://github.com/andrejewski/js-package/issues"
   },
   "devDependencies": {
+    "ava": "^0.16.0",
     "babel-core": "^6.13.2",
     "babel-eslint": "^6.1.2",
     "babel-polyfill": "^6.13.0",
@@ -20,14 +21,10 @@
     "del": "^2.2.1",
     "eslint": "^3.2.2",
     "eslint-plugin-babel": "^3.3.0",
-    "eslint-plugin-mocha": "^4.3.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-eslint": "^3.0.1",
-    "gulp-mocha": "^3.0.0",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-util": "^3.0.7",
-    "mocha": "^3.0.1",
     "source-map-support": "^0.4.2"
   },
   "homepage": "https://github.com/andrejewski/js-package#readme",
@@ -44,8 +41,8 @@
     "url": "git+https://github.com/andrejewski/js-package.git"
   },
   "scripts": {
-    "build": "gulp build",
-    "test": "mocha",
+    "build": "gulp",
+    "test": "gulp --silent && ava",
     "watch": "gulp watch"
   }
 }
