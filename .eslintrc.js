@@ -121,6 +121,7 @@ module.exports = {
 /**
  * Best practices
  */
+    "arrow-parens": [2, "as-needed"],
     "no-extra-boolean-cast": 2,
     "curly": [2, "multi-line"],
     "default-case": 2,
