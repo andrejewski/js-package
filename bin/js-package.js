@@ -7,12 +7,12 @@ var pkg = require('../package')
 var args = process.argv.slice(2)
 var command = args[0]
 
-function cmd (command) {
+function cmd (command, errorMessage) {
   log(command)
   try {
     execSync(command)
   } catch (error) {
-    log('* copied only new files')
+    log(errorMessage)
   }
 }
 
@@ -31,7 +31,8 @@ function main () {
         log('"' + destDir + '" is not a directory')
         return
       }
-      cmd('cp -nR ' + packageDir + ' ' + destDir)
+      cmd('cp -nR ' + packageDir + ' ' + destDir, '* copied only new files')
+      cmd('rm -rf ' + destDir + '/.git', 'Could not remove .git directory')
       log('run `git init`, `npm init`, and `npm install` to finish setting up the package')
       return
     default:

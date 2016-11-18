@@ -1,7 +1,7 @@
 {
   "name": "js-package",
   "description": "cocaine, but for JavaScript open-source packages",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Chris Andrejewski <christopher.andrejewski@gmail.com>",
   "bin": {
     "js-package": "bin/js-package.js"
@@ -17,9 +17,12 @@
     "babel-regenerator-runtime": "^6.5.0",
     "babel-register": "^6.11.6",
     "del": "^2.2.1",
+    "fixpack": "^2.3.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-sourcemaps": "^1.6.0",
+    "pre-commit": "^1.1.3",
+    "pre-push": "^0.1.1",
     "source-map-support": "^0.4.2",
     "standard": "^8.4.0"
   },
@@ -32,13 +35,21 @@
   ],
   "license": "ISC",
   "main": "lib/index.js",
+  "pre-commit": [
+    "lint"
+  ],
+  "pre-push": [
+    "test"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andrejewski/js-package.git"
   },
   "scripts": {
     "build": "gulp",
-    "test": "gulp --silent && ava",
+    "lint": "standard && fixpack",
+    "prepublish": "npm run test",
+    "test": "gulp --silent && npm run lint && ava",
     "watch": "gulp watch"
   }
 }
