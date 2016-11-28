@@ -1,3 +1,5 @@
+# NOTE: duplicate of .gitignore except not excluding build artifacts
+
 # Filesystem artifacts
 .DS_Store
 

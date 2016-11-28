@@ -9,6 +9,20 @@
     ],
     "babel": "inherit"
   },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"
+    ],
+    "plugins": [],
+    "env": {
+      "nyc": {
+        "plugins": [
+          "istanbul"
+        ]
+      }
+    }
+  },
   "bin": {
     "js-package": "bin/js-package.js"
   },
