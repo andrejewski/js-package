@@ -72,10 +72,10 @@
     ]
   },
   "pre-commit": [
-    "lint"
+    "prepublish"
   ],
   "pre-push": [
-    "test"
+    "prepublish"
   ],
   "repository": {
     "type": "git",
@@ -83,10 +83,12 @@
   },
   "scripts": {
     "build": "gulp",
+    "coveralls": "npm run report && nyc report --reporter=text-lcov | coveralls",
     "lint": "standard --fix && fixpack",
     "prepublish": "npm run build && npm run test",
     "report": "NODE_ENV=nyc nyc npm test",
     "test": "npm run lint && ava",
+    "test-ci": "npm run prepublish",
     "watch": "gulp watch"
   }
 }
