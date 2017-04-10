@@ -1,4 +1,6 @@
 # JavaScript Package
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/andrejewski/js-package.svg)](https://greenkeeper.io/)
 This is a starter repo for Node packages I publish, to start faster and with best practices and defaults ready to use.
 
 ## What's in the box!?
